@@ -13,7 +13,8 @@ namespace Vaca
     class Boi
     {
         private:
-        int x;
+            int x;
+            int y;
 
         public:
             void Mugido()
@@ -28,13 +29,30 @@ namespace Vaca
 
             }
 
-            int y;
+    };
+
+    class Sanduiche
+    {
+        private:
+            std::string nome;
+        
+        public:
+            void Messensagem()
+            {
+                std::cout << nome << std::endl;
+            }
+
+            Sanduiche(std::string _nome) : nome(_nome) {}
     };
 }
 
 int main()
 {
     InitFolha(f);
+
+    Vaca::Sanduiche misto("misto");
+
+    misto.Messensagem();
 
     Vaca::Boi boi(12, 50);
     boi.Mugido();
