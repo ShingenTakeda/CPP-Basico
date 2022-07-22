@@ -10,9 +10,14 @@ file(GLOB_RECURSE FOLHA_SRC "${PROJECT_SOURCE_DIR}/Folha/*.cpp" "${PROJECT_SOURC
 
 add_library(folha SHARED ${FOLHA_SRC})
 
+include_directories(${PROJECT_SOURCE_DIR}/biblioteca/)
+file(GLOB_RECURSE BIBLIO_SRC "${PROJECT_SOURCE_DIR}/biblioteca/*.cpp" "${PROJECT_SOURCE_DIR}/biblioteca/*.hpp")
+
+add_library(biblio STATIC ${BIBLIO_SRC})
+
 #Executavel
 include_directories(${PROJECT_SOURCE_DIR}/src/)
 file(GLOB_RECURSE B_SRC "${PROJECT_SOURCE_DIR}/src/*.cpp" "${PROJECT_SOURCE_DIR}/src/*.hpp")
 
 add_executable(b ${B_SRC})
-target_link_libraries(b folha)
+target_link_libraries(b folha biblio)

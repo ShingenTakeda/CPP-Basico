@@ -1,4 +1,5 @@
 #include <folha.hpp>
+#include "../biblioteca/biblioteca.hpp"
 #include "headers/Classe.hpp"
 
 Folha f;
@@ -37,7 +38,7 @@ namespace Vaca
             std::string nome;
         
         public:
-            void Messensagem()
+            void Messesagem()
             {
                 std::cout << nome << std::endl;
             }
@@ -52,7 +53,7 @@ int main()
 
     Vaca::Sanduiche misto("misto");
 
-    misto.Messensagem();
+    misto.Messesagem();
 
     Vaca::Boi boi(12, 50);
     boi.Mugido();
@@ -64,6 +65,8 @@ int main()
     std::cout << mtb.Somar(60, 9) << std::endl;
 
     std::cout << f.nomeArvore << " " << f.qntFolhas << std::endl;
+
+    Animal animal(2, "Malamute", "auau");
 
     return 0;
 }
