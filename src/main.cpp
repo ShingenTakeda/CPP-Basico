@@ -1,5 +1,5 @@
 #include <folha.hpp>
-#include "../biblioteca/biblioteca.hpp"
+#include <biblioteca.hpp>
 #include "headers/Classe.hpp"
 
 Folha f;
