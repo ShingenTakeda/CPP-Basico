@@ -4,9 +4,10 @@ project(basico1)
 
 set (CMAKE_CXX_STANDARD 17)
 
-#Biblioteca
+#Bibliotecas
 include_directories(${PROJECT_SOURCE_DIR}/Folha/)
 file(GLOB_RECURSE FOLHA_SRC "${PROJECT_SOURCE_DIR}/Folha/*.cpp" "${PROJECT_SOURCE_DIR}/Folha/*.hpp")
+
 
 add_library(folha SHARED ${FOLHA_SRC})
 
