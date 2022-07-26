@@ -29,7 +29,7 @@ int main()
     *pointer indica o endereço na memoria onde a variavel esta.
     *passa-se a variavel desejada por referencia
     */
-   int *pointerTest = &refTest;
+    int *pointerTest = &refTest;
 
     std::cout << "onde na memoria o refTest esta: " << pointerTest << std::endl;
     std::cout << "o valor da variavel que o pointerTest esta apontando: " << *pointerTest << std::endl;
@@ -37,6 +37,26 @@ int main()
     gprint<std::string>("Print generico comeca aqui");
     gprint<int>(refTest);
     gprint<int*>(pointerTest);
+
+    gprint<float>(6.0f);
+
+    uint64_t num = 0;
+
+    std::cin >> num;
+
+    switch(num)
+    {
+        case 0:
+            gprint<int>(num);
+            break;
+
+        case 1:
+            gprint<int>(num);
+            break;
+    
+        default:
+            break;
+    }
 
     return 0;
 }
