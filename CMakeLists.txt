@@ -1,23 +1,16 @@
 cmake_minimum_required(VERSION 3.16.0)
 
-project(Basico)
+project(intensivo_cpp)
 
 set (CMAKE_CXX_STANDARD 17)
 
-#Biblioteca
-include_directories(${PROJECT_SOURCE_DIR}/Folha/)
-file(GLOB_RECURSE FOLHA_SRC "${PROJECT_SOURCE_DIR}/Folha/*.cpp" "${PROJECT_SOURCE_DIR}/Folha/*.hpp")
+option(BASICO_UM "Primeira parte(headers,classes,structs,bibliotecas)" ON)
+option(BASICO_DOIS "Segunda parte(pointeiros,referencias,basicos de template)" ON)
 
-add_library(folha SHARED ${FOLHA_SRC})
+if(BASICO_UM)
+    add_subdirectory(Basico1/)
+endif()
 
-include_directories(${PROJECT_SOURCE_DIR}/biblioteca/)
-file(GLOB_RECURSE BIBLIO_SRC "${PROJECT_SOURCE_DIR}/biblioteca/*.cpp" "${PROJECT_SOURCE_DIR}/biblioteca/*.hpp")
-
-add_library(biblio STATIC ${BIBLIO_SRC})
-
-#Executavel
-include_directories(${PROJECT_SOURCE_DIR}/src/)
-file(GLOB_RECURSE B_SRC "${PROJECT_SOURCE_DIR}/src/*.cpp" "${PROJECT_SOURCE_DIR}/src/*.hpp")
-
-add_executable(b ${B_SRC})
-target_link_libraries(b folha biblio)
+if(BASICO_DOIS)
+    add_subdirectory(Basico2/)
+endif()
